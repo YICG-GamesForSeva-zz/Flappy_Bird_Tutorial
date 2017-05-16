@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 1615122186}
   - component: {fileID: 1615122187}
   m_Layer: 0
-  m_Name: SkyTileSprite
+  m_Name: Sky Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
