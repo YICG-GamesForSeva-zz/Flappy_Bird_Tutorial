@@ -7,31 +7,34 @@ public class Bird : MonoBehaviour
     public float upForce = 200f;
     private bool isDead = false;
     private Rigidbody2D rb2d;
-    private Animator anim; 
+    private Animator anim;
 
     // Use this for initialization
     void Start()
     {
+        // Get the reference to the Animator component
         rb2d = GetComponent<Rigidbody2D>();
+
+        // Get and store the animator reference
         anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // DO NOT allow control if the bird has died.
+        // DO NOT allow the control if the bird has died
         if (isDead == false)
         {
             // Look for input to trigger the "flap"
             if(Input.GetMouseButtonDown(0))
             {
-                // Tell the animator about the trigger
+                // Tell the animator about the transition
                 anim.SetTrigger("Flap");
 
-                // Zero out the birds current y velocity 
+                // Then, zero out the birds current y velocity to zero
                 rb2d.velocity = Vector2.zero;
 
-                // This gives the bird upward force
+                // Now, giving the bird some upward force
                 rb2d.AddForce(new Vector2(0, upForce));
             }
         }
@@ -42,10 +45,10 @@ public class Bird : MonoBehaviour
         // Zero out the bird's velocity
         rb2d.velocity = Vector2.zero;
 
-        // If the bird collides with something, it is marked to be dead
+        //If the bird collides with something set it to be dead
         isDead = true;
 
-        // Tell the Animator about it
+        // Tell the animator about it
         anim.SetTrigger("Die");
     }
 }
