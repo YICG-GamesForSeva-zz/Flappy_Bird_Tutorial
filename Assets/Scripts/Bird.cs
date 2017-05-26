@@ -50,5 +50,8 @@ public class Bird : MonoBehaviour
 
         // Tell the animator about it
         anim.SetTrigger("Die");
+
+        // Notifying the GameController to end the game
+        GameController.instance.BirdDied();
     }
 }
