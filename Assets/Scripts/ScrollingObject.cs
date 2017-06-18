@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+    Use of inheritance is in play here
+    where the ScrollingObject class is inheriting
+    from the MonoBehaviour class
+*/
 public class ScrollingObject : MonoBehaviour
 {
     private Rigidbody2D rb2d;
